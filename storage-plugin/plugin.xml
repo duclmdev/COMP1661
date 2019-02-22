@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<plugin id="storage-plugin" version="1.0.0" xmlns="http://apache.org/cordova/ns/plugins/1.0">
+    <name>storage</name>
+    <author>Le Minh Duc</author>
+    <license>MIT</license>
+    <description>The Cordova plugin for storage features in COMP1661 course's project.</description>
+    <js-module name="storage" src="www/storage.js">
+        <runs/>
+        <clobbers target="storage"/>
+    </js-module>
+
+    <platform name="android">
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="storage">
+                <param name="android-package" value="edu.fpt.comp1661.StoragePlugin"/>
+                <param name="onload" value="true"/>
+            </feature>
+        </config-file>
+        <source-file src="src/android/edu/fpt/comp1661/StoragePlugin.java" target-dir="src/android/edu/fpt/comp1661/"/>
+    </platform>
+</plugin>
